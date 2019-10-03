@@ -271,7 +271,9 @@ RCT_EXPORT_METHOD(startWithOptions:(NSDictionary *)options) {
     config.autoNotify = [RCTConvert BOOL:options[@"autoNotify"]];
     config.shouldAutoCaptureSessions = [RCTConvert BOOL:options[@"autoCaptureSessions"]];
     config.automaticallyCollectBreadcrumbs = [RCTConvert BOOL:options[@"automaticallyCollectBreadcrumbs"]];
-
+    config.reportOOMs = [RCTConvert BOOL:options[@"reportOOMs"]];
+    config.reportBackgroundOOMs = [RCTConvert BOOL:options[@"reportBackgroundOOMs"]];
+    
     [config addBeforeSendSession:^void(NSMutableDictionary *_Nonnull data) {
         data[@"device"] = [self addDeviceRuntimeVersion:data[@"device"]
                                      reactNativeVersion:[self findReactNativeVersion]];

@@ -41,6 +41,8 @@ export class Configuration {
   public autoCaptureSessions: boolean;
   public automaticallyCollectBreadcrumbs: boolean;
   public consoleBreadcrumbsEnabled: boolean;
+  public reportOOMs: boolean
+  public reportBackgroundOOMs: boolean
 
   constructor(apiKey?: string);
 
